@@ -174,16 +174,32 @@ def make_weird(image, file_name, draw, width, height, pix):
     print("Время работы программы: {0} с".format(t))
 
 
-def change_picture(mode, image, file_name, draw, width, height, pix):
-    if mode == 0:
-        make_gray(image, file_name, draw, width, height, pix)
-    elif mode == 1:
-        make_random(image, file_name, draw, width, height)
-    elif mode == 2:
-        make_gradient(image, file_name, draw, width, height, pix)
-    elif mode == 3:
-        make_black1(image, file_name, draw, width, height, pix)
-    elif mode == 4:
-        make_black2(image, file_name, draw, width, height, pix)
-    elif mode == 5:
-        make_weird(image, file_name, draw, width, height, pix)
+def assemble6(f, x1, x2, x3, x4, x5, x6):
+    return f(x1, x2, x3, x4, x5, x6)
+
+
+def assemble5(f, x1, x2, x3, x4, x5):
+    return f(x1, x2, x3, x4, x5)
+
+
+__mode_switch = {
+
+    '0': make_gray,
+    '1': make_random,
+    '2': make_gradient,
+    '3': make_black1,
+    '4': make_black2,
+    '5': make_weird
+
+}
+
+
+def get_switch():
+    return __mode_switch
+
+
+def change_picture(mode, mode_switch, image, file_name, draw, width, height, pix):
+    if mode == 1:
+        assemble5(mode_switch.get(str(mode)), image, file_name, draw, width, height)
+    else:
+        assemble6(mode_switch.get(str(mode)), image, file_name, draw, width, height, pix)
