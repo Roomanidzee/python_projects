@@ -1,2 +1,2 @@
 # python_projects
-All my python projects
+В данном репозитории хранятся все проекты, созданные мной на языке Python
