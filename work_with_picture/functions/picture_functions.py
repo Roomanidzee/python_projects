@@ -5,6 +5,9 @@ from functions import draw_effects_functions
 
 
 def make_gray(image, file_name, draw, width, height, pix):
+    """
+    Создание серого фона у картинки
+    """
     t1 = time.time()
 
     for i in range(width):
@@ -26,6 +29,9 @@ def make_gray(image, file_name, draw, width, height, pix):
 
 
 def make_random(image, file_name, draw, width, height):
+    """
+    На картинке создаётся "шум" произвольной площади
+    """
     t1 = time.time()
 
     for i in range(width):
@@ -46,6 +52,9 @@ def make_random(image, file_name, draw, width, height):
 
 
 def make_gradient(image, file_name, draw, width, height, pix):
+    """
+    На картинку добавляется градиент
+    """
     t1 = time.time()
 
     for i in range(width):
@@ -88,6 +97,9 @@ def make_gradient(image, file_name, draw, width, height, pix):
 
 
 def make_black1(image, file_name, draw, width, height, pix):
+    """
+    Первый тип чёрно - белого контраста
+    """
     t1 = time.time()
 
     fact = int(input("Фактор цвета: "))
@@ -118,6 +130,9 @@ def make_black1(image, file_name, draw, width, height, pix):
 
 
 def make_black2(image, file_name, draw, width, height, pix):
+    """
+    Второй тип чёрно - белого контраста
+    """
     t1 = time.time()
 
     for i in range(width):
@@ -138,6 +153,9 @@ def make_black2(image, file_name, draw, width, height, pix):
 
 
 def make_weird(image, file_name, draw, width, height, pix):
+    """
+    Преобразование картинки по определенной матрице
+    """
     l = int(input("Режим матрицы: "))
 
     t1 = time.time()
