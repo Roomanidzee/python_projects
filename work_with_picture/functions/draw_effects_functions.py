@@ -1,5 +1,8 @@
 __matrix_dict = {
-
+     """
+     Матрица значений для изменения картинки
+     """
+    
     '0': [[1, 1, 1], [1, 1, 1], [1, 1, 1]],
     '1': [[0, -1, 0], [-1, 5, -1], [0, -1, 0]],
     '2': [[0, -1, 0], [-1, 4, -1], [0, -1, 0]],
@@ -10,10 +13,16 @@ __matrix_dict = {
 
 
 def get_matrix_dict():
+    """
+    Получение матрицы значений
+    """
     return __matrix_dict
 
 
 def change_color_effects(mode, array, matrix_type_dict):
+    """
+    Изменение картинки в определенном режиме
+    """
     res = 0
 
     matrix = matrix_type_dict.get(mode)
