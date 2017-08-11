@@ -21,6 +21,9 @@ __links_type = {
 
 
 def make_request(request_type, request_id):
+    """
+    Отправление запроса к API Звёздных Войн
+    """
     request_string = "{0}/{1}".format(__links_type.get(request_type), request_id)
 
     header = requests.utils.default_headers()
@@ -39,12 +42,3 @@ def make_request(request_type, request_id):
 
     with open(path_to_file, 'w+') as f:
         json.dump(data, f)
-"""
-request_string = "{0}/{1}".format(__links_type.get('films'), 3)
-
-header = requests.utils.default_headers()
-
-response = requests.get(request_string,  headers=header)
-
-print(response.content)
-"""
